@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategorieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//CATEGORIE
+Route::get('/listeCategories', [CategorieController::class,'index']);
+Route::get('/AjoutCategorie', [CategorieController::class,'create']);
+Route::post('/AjouterCategorie', [CategorieController::class,'store']);
+
+//ARTICLE
+Route::get('/listeArticles', [ArticleController::class,'index']);
+Route::get('/AjoutArticle', [ArticleController::class,'create']);
+Route::post('/AjouterArticle', [ArticleController::class,'store']);
