@@ -24,3 +24,4 @@ Route::post('/AjouterCategorie', [CategorieController::class,'store']);
 Route::get('/listeArticles', [ArticleController::class,'index']);
 Route::get('/AjoutArticle', [ArticleController::class,'create']);
 Route::post('/AjouterArticle', [ArticleController::class,'store']);
+Route::get('/article/{id}', [ArticleController::class,'show']);
